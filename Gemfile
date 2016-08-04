@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.4'
+
 gem 'rails', '4.2.7'
 gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -20,3 +22,6 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
