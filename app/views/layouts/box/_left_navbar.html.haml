@@ -1,8 +1,8 @@
 = form_tag wheels_path, method: 'get' do
   .form-group
-    =select_tag 'brand', options_for_select(['Bridgestone', 'Dunlop', 'Pirelli', 'Metzeler'], nil), prompt: 'Виберіть Виробника', class: 'selectpicker'
+    =select_tag 'brand', options_for_select(['Bridgestone', 'Dunlop', 'Pirelli', 'Metzeler'], nil), prompt: 'Виробник', class: 'selectpicker'
   .form-group
-    =select_tag 'radius', options_for_select([14,17, 18, 21], nil), prompt: 'Виберіть радіус', class: 'selectpicker'
+    =select_tag 'radius', options_for_select([14,17, 18, 21], nil), prompt: 'Радіус', class: 'selectpicker'
   .form-group
     =select_tag 'axis', options_for_select(['Передня(Front)', 'Задня(Rear)'], nil), prompt: 'Вісь застосування', class: 'selectpicker'
   .form-group
