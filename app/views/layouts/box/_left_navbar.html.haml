@@ -1,0 +1,14 @@
+= form_tag wheels_path, method: 'get' do
+  .form-group
+    =select_tag 'brand', options_for_select(['Bridgestone', 'Dunlop', 'Pirelli', 'Metzeler'], nil), prompt: 'Виберіть Виробника', class: 'selectpicker'
+  .form-group
+    =select_tag 'radius', options_for_select([14,17, 18, 21], nil), prompt: 'Виберіть радіус', class: 'selectpicker'
+  .form-group
+    =select_tag 'axis', options_for_select(['Передня(Front)', 'Задня(Rear)'], nil), prompt: 'Вісь застосування', class: 'selectpicker'
+  .form-group
+    =select_tag 'width', options_for_select([150, 160, 170, 180, 190], nil), prompt: 'Ширина', class: 'selectpicker'
+  .form-group
+    =select_tag 'height', options_for_select([70, 80, 90], nil), prompt: 'Висота', class: 'selectpicker'
+  .form-group.search
+    .btn-group.bootstrap-select
+      =submit_tag 'Пошук', class: 'btn btn-danger col-xs-12', data: {behavior: 'Select'}

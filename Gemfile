@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'haml-rails'
 gem 'rails_12factor'
 gem 'puma'
+gem 'elementaljs-rails'
 
 group :development, :test do
   gem 'pry'
