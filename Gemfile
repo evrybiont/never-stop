@@ -15,6 +15,8 @@ gem 'haml-rails'
 gem 'rails_12factor'
 gem 'puma'
 gem 'elementaljs-rails'
+gem 'devise'
+gem 'activeadmin', '~> 1.0.0.pre4'
 
 group :development, :test do
   gem 'pry'

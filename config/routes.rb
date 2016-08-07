@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root 'welcome#index'
   resources :wheels
+
+  get '*unmatched_route', to: 'application#not_found'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
