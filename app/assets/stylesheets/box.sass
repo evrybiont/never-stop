@@ -1,0 +1,43 @@
+.wheel
+  border: 1px solid #ccc
+  box-shadow: 0 1px 3px #ccc
+  border-radius: 6px
+  font-family: Times New Roman
+  margin-bottom: 20px
+  max-width: 300px
+  .wheel-img
+    .fade-container
+      position: relative
+      &:hover
+        img
+          opacity: 0.7
+      .mask
+        border-radius: 5px 5px 0 0
+        bottom: 0
+        left: 0
+        position: absolute
+        right: 0
+        top: 0
+        background-color: black
+        z-index: 1
+      .image
+        border-radius: 4px 4px 0px 0px
+        display: block
+        height: auto
+        position: inherit
+        width: 100%
+        z-index: 2
+
+  .footer
+    background-color: windowframe
+    border-radius: 0 0 5px 5px
+    padding: 10px
+    .name
+      font-size: 15px
+      overflow: hidden
+      text-overflow: ellipsis
+      text-align: center
+      white-space: nowrap
+    .end
+      border-top: 1px solid #ccc
+      padding-top: 10px

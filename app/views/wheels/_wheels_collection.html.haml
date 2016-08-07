@@ -1,0 +1,9 @@
+- step = 0
+
+- while wheels[step]
+  .row
+    - 4.times do |i|
+      - if wheels[i + step].nil?
+        - break
+      = render partial: 'wheel', locals: {wheel: wheels[i + step]}
+    - step += 4
