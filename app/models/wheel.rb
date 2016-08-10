@@ -11,6 +11,6 @@ class Wheel < ActiveRecord::Base
   end
 
   def image
-    images.first.data.url(:original)
+    images.first.data.url(:medium)
   end
 end
