@@ -12,7 +12,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'haml-rails'
-gem 'rails_12factor'
 gem 'puma'
 gem 'elementaljs-rails'
 gem 'devise'
@@ -30,4 +29,8 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
