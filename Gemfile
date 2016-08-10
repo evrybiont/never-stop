@@ -17,8 +17,13 @@ gem 'puma'
 gem 'elementaljs-rails'
 gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'active_admin_importable'
+gem 'paperclip', '~> 5.0.0'
+gem 'aws-sdk', '~> 2'
+gem 'aws-s3', require: false
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry'
 end
 

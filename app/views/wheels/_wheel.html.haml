@@ -1,14 +1,14 @@
 .col-xs-3
   .wheel
     .wheel-img
-      = link_to '#', title: 'PIRELLI Diablo Rosso II R17 180/55 73W TL' do
+      = link_to '#', title: wheel.full_name do
         .fade-container
           .mask
-          = image_tag 'pilot.jpg', class: 'image'
+          = image_tag wheel.image, class: 'image'
     .footer
       .row
-        .col-xs-12.name{title: 'PIRELLI'} PIRELLI
-        .col-xs-12.name{title: 'R17 180/55 73W TL'} R17 180/55 73W TL
+        .col-xs-12.name{title: wheel.brand_name}= wheel.brand_name
+        .col-xs-12.name{title: wheel.title}= wheel.title
       .row.end
-        .col-xs-12.tc 566 грн
+        .col-xs-12.tc= "#{wheel.price} грн"
         .col-xs-12.tc= link_to 'Купить', '#', class: 'btn btn-danger'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160807110048) do
+ActiveRecord::Schema.define(version: 20160810132215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,4 +49,46 @@ ActiveRecord::Schema.define(version: 20160807110048) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "brands", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "wheel_id"
+    t.string   "data_file_name"
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.datetime "data_updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "images", ["wheel_id"], name: "index_images_on_wheel_id", using: :btree
+
+  create_table "sides", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wheels", force: :cascade do |t|
+    t.string   "name"
+    t.string   "title"
+    t.integer  "brand_id"
+    t.integer  "price"
+    t.integer  "radius"
+    t.integer  "side_id"
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "wheels", ["brand_id"], name: "index_wheels_on_brand_id", using: :btree
+  add_index "wheels", ["side_id"], name: "index_wheels_on_side_id", using: :btree
+
+  add_foreign_key "wheels", "brands"
+  add_foreign_key "wheels", "sides"
 end
