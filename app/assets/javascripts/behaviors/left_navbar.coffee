@@ -8,3 +8,7 @@ class Behavior.LeftNavbar
       $('#filter').css({
         'top': $(this).scrollTop()
     })
+
+    $('#clear').click (e) ->
+      e.preventDefault()
+      $('.selectpicker').selectpicker('deselectAll')

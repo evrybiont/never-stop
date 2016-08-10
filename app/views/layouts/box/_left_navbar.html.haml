@@ -1,14 +1,16 @@
 = form_tag wheels_path, method: 'get', id: 'filter' do
   .form-group
-    =select_tag 'brand', options_for_select(['Bridgestone', 'Dunlop', 'Pirelli', 'Metzeler'], nil), prompt: 'Виробник', class: 'selectpicker'
+    = select_tag 'brand', options_for_select(@brands, params[:brand]), prompt: 'Виробник', class: 'selectpicker'
   .form-group
-    =select_tag 'radius', options_for_select([14,17, 18, 21], nil), prompt: 'Радіус', class: 'selectpicker'
+    = select_tag 'radius', options_for_select([14,17, 18, 21], params[:radius]), prompt: 'Радіус', class: 'selectpicker'
   .form-group
-    =select_tag 'axis', options_for_select(['Передня(Front)', 'Задня(Rear)'], nil), prompt: 'Вісь застосування', class: 'selectpicker'
+    = select_tag 'side', options_for_select(@sides, params[:side]), prompt: 'Вісь застосування', class: 'selectpicker'
   .form-group
-    =select_tag 'width', options_for_select([150, 160, 170, 180, 190], nil), prompt: 'Ширина', class: 'selectpicker'
+    = select_tag 'width', options_for_select([150, 160, 170, 180, 190], params[:width]), prompt: 'Ширина', class: 'selectpicker'
   .form-group
-    =select_tag 'height', options_for_select([70, 80, 90], nil), prompt: 'Висота', class: 'selectpicker'
+    = select_tag 'height', options_for_select([70, 80, 90], params[:height]), prompt: 'Висота', class: 'selectpicker'
   .form-group.search
     .btn-group.bootstrap-select
-      =submit_tag 'Пошук', class: 'btn btn-danger col-xs-12', data: {behavior: 'LeftNavbar'}
+      = submit_tag 'Пошук', class: 'btn btn-danger col-xs-12'
+    .btn-group.bootstrap-select
+      = button_tag 'Очистити', id: 'clear', data: {behavior: 'LeftNavbar'}, class: 'btn btn-danger col-xs-12'
